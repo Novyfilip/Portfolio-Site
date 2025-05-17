@@ -1,0 +1,11 @@
+<!-- templates/contact.html -->
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<h1>Contact Me</h1>
+<form method="post" onsubmit="return validateForm()">
+  <input type="text" name="name" id="name" placeholder="Your Name" required>
+  <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+{% endblock %}
