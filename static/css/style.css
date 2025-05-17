@@ -1,5 +1,3 @@
-/* style.css */
-
 /* ——— Light & Dark Themes ——— */
 :root {
     --bg: #faf7f0;
@@ -130,5 +128,17 @@
     nav a, nav button {
       text-align: center;
     }
+  }
+  .project-item {
+    margin-bottom: 1.5rem;
+  }
+  .project-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--link);
+  }
+  .project-desc {
+    margin: .25rem 0 0 1rem;
+    color: var(--text);
   }
   

@@ -1,0 +1,17 @@
+<p><a href="{{ url_for('projects') }}">&larr; Back to all projects</a></p>
+
+{% extends "base.html" %}
+
+{% block title %}{{ name }} – Filip's Portfolio{% endblock %}
+
+{% block content %}
+  <h1>{{ name }}</h1>
+  {% if desc %}
+    <p><em>{{ desc }}</em></p>
+  {% endif %}
+  <p>
+    <a href="{{ url }}" target="_blank">
+      ▶ View on GitHub
+    </a>
+  </p>
+{% endblock %}

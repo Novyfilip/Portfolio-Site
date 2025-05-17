@@ -1,9 +1,21 @@
-<!-- templates/projects.html -->
 {% extends "base.html" %}
+
+{% block title %}Projects – Filip Nový{% endblock %}
+
 {% block content %}
   <h1>My GitHub Projects</h1>
-  <ul>
-    <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
-  </ul>
-{% endblock %}
 
+  {% if projects %}
+    <ul>
+      {% for p in projects %}
+        <li>
+          <!-- for a simple link -->
+          <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
+          {% if p.desc %} – {{ p.desc }}{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No projects found (or API error).</p>
+  {% endif %}
+{% endblock %}
