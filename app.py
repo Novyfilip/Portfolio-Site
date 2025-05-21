@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash, url_for
+from flask import Flask, render_template, request, redirect, flash, url_for, abort
 import os, json, datetime, requests
 print("CWD:", os.getcwd())
 print("emplates folder contents:", os.listdir(os.path.join(os.getcwd(), 'templates')))
@@ -57,6 +57,15 @@ def interests():
                            images=images,
                            captions=captions)
 
+@app.route('/notebooks')
+def notebooks():
+    # list of (name, filepath) tuples
+    nb = [
+       ("Car Classification", "Car classification.ipynb")
+       #,  
+     # will add more
+    ]
+    return render_template('notebooks.html', notebooks=nb)
 
 @app.route('/contact', methods=['GET','POST'])
 def contact():

@@ -6,16 +6,17 @@
   <h1>My GitHub Projects</h1>
 
   {% if projects %}
-    <ul>
-      {% for p in projects %}
-        <li>
-          <!-- for a simple link -->
-          <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
-          {% if p.desc %} – {{ p.desc }}{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No projects found (or API error).</p>
-  {% endif %}
+  <div class="projects-grid">
+    {% for p in projects %}
+      <div class="project-card">
+        <h3><a href="{{ p.url }}" target="_blank">{{ p.name }}</a></h3>
+        {% if p.desc %}
+          <p>{{ p.desc }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No projects found (or API error).</p>
+{% endif %}
 {% endblock %}
