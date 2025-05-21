@@ -107,6 +107,9 @@ def contact():
 
     return render_template('contact.html')
 
-# default port is fine for now
+
+
+#For production, we need to set the FLASK_ENV environment variable to production
 if __name__ == '__main__':
-    app.run(debug=True)
+    debug = os.environ.get("FLASK_DEBUG", "true") == "true"
+    app.run(debug=debug)
