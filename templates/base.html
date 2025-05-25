@@ -15,11 +15,14 @@
         <a href="/">Home</a> |
         <a href="/projects">Projects</a> |
         <a href="/interests">Interests</a> |
-        <a href="/notebooks">Notebooks</a> |
         <a href="/contact">Contact</a> |
         <button id="dark-toggle">🌙</button>
+        <button onclick="document.body.style.fontSize='larger'">➕</button>
+        <button onclick="document.body.style.fontSize='smaller'">➖</button>
+
       </nav>
-      
+      <header class="gradient-header"></header>
+   
   <main>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -30,5 +33,13 @@
     {% endwith %}
     {% block content %}{% endblock %}
   </main>
+  <footer class="gradient-footer"><p>&copy; 2025 Filip Nový</p>
+  <p>{% if motd %}
+    <div class="insight-box">
+      💡 <em>{{ motd }}</em>
+    </div>
+  {% endif %}</p></footer>
+  
+
 </body>
 </html>

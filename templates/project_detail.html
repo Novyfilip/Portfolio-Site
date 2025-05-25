@@ -1,17 +1,29 @@
-<p><a href="{{ url_for('projects') }}">&larr; Back to all projects</a></p>
-
 {% extends "base.html" %}
 
-{% block title %}{{ name }} – Filip's Portfolio{% endblock %}
+{% block title %}{{ name.replace('-', ' ') }} – Filip's Portfolio{% endblock %}
 
 {% block content %}
-  <h1>{{ name }}</h1>
+  <h1>{{ name.replace('-', ' ') }}</h1>
+
   {% if desc %}
     <p><em>{{ desc }}</em></p>
   {% endif %}
-  <p>
-    <a href="{{ url }}" target="_blank">
-      ▶ View on GitHub
+
+  <p><a href="{{ url }}" target="_blank">🔗View on GitHub</a></p>
+
+  {% if binder_url %}
+    <a class="notebook-btn" href="{{ binder_url }}" target="_blank">
+      🚀 Launch Notebook
     </a>
-  </p>
+  {% endif %}
+
+  {% if readme %}
+    <hr>
+    <h2>📄 README</h2>
+    <div class="readme-content">
+      {{ readme | safe }}
+    </div>
+  {% else %}
+    <p><em>No README found in this repo.</em></p>
+  {% endif %}
 {% endblock %}
