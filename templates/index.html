@@ -6,7 +6,7 @@
   <img src="{{ url_for('static', filename='img/yellowshirt.jpeg') }}" alt="Filip Nový" class="profile-square">
 
   <h1>Filip Nový</h1>
-  <p><em>Master’s Student in Data Science @ SDU | ex-T-Mobile Data Analyst</em></p>
+  <p><em>Junior Data Scientist | NLP, Retrieval & Applied Machine Learning</em></p>
 
   <div class="socials">
     <a href="https://www.linkedin.com/in/filip-novy-288835254/" target="_blank">🔗 LinkedIn</a>
@@ -14,47 +14,43 @@
     <a href="https://www.kaggle.com/filipnovy" target="_blank">📊 Kaggle</a>
   </div>
 
-  <a href="{{ url_for('static', filename='docs/Filip_Novy_CV.pdf') }}" download>
+  <a href="{{ url_for('static', filename='docs/CV_Filip_Novy.pdf') }}" download>
     <button>📄 Download CV</button>
   </a>
 </div>
 
 <h2>Profile</h2>
 <p>
-  I’m a Data Science MSc student at SDU with 1.5 years in T-Mobile’s data analytics team—
-  building Power BI reports, cleaning data, and presenting insights to non-tech colleagues.
-  Looking for part-time data science/IT roles alongside my studies.
+  I am an MSc Data Science candidate specializing in retrieval-augmented generation, knowledge graphs, and LLM systems. My current thesis work focuses on building a production-grade GraphRAG chatbot over a corpus of ~880 scientific papers. Previously, I spent 1.5 years at T-Mobile Czech Republic as a Data Analyst, engineering SQL pipelines and building dashboards adopted by regional sales teams. I am currently seeking ML/NLP roles where end-to-end ownership and measurable evaluation matter.
 </p>
 
-<h2>Skills</h2>
+<h2>Technical Skills</h2>
 <ul>
-  <li><strong>Programming:</strong>
-    <ul>
-      <li>Python – comfortable command of the language for data cleaning, scripting, and automation</li>
-      <li>Java – GUI app development; OOP & design patterns</li>
-      <li>R – statistical modeling; aesthetic data visualization</li>
-      <li>SQL – querying, DB design & maintenance; fixed ETL in Oracle & MS SQL</li>
-    </ul>
-  </li>
-  <li><strong>Machine Learning:</strong>
-    <ul>
-      <li>Classification & clustering (scikit-learn)</li>
-      <li>Model evaluation & hyperparameter tuning</li>
-    </ul>
-  </li>
-  <li><strong>Web Development:</strong>
-    <ul>
-      <li>Flask / HTML / CSS / JavaScript</li>
-    </ul>
-  </li>
-  <li><strong>Tools:</strong> Excel, Power BI, Tableau, Git, PowerPoint</li>
+  <li><strong>Languages:</strong> Python (scikit-learn, PyTorch, LangChain, Flask, Pydantic), SQL (Oracle, MS SQL, MariaDB), R, Java</li>
+  <li><strong>ML & NLP:</strong> Transformers, BGE embeddings, cross-encoder reranking, RAG / GraphRAG, Vector databases (ChromaDB), Knowledge graphs (Neo4j), MultiQuery retrieval</li>
+  <li><strong>LLM Ops:</strong> OpenAI / DeepSeek / Ollama APIs, prompt engineering, RAGAS evaluation, custom evaluation frameworks, agentic workflows</li>
+  <li><strong>MLOps & Tools:</strong> Git, Docker, Streamlit, Jupyter, Power BI, Plotly / Dash, UCloud HPC</li>
 </ul>
 
-<h2>Experience</h2>
+<h2>Selected Projects</h2>
 <ul>
-  <li><strong>T-Mobile</strong> (Apr 2023 – Aug 2024): Power BI reporting, employee DB admin, ad-hoc analyses.</li>
-  <li><strong>Brno Trade Fairs</strong> (2019 – 2022): Translating documents from Czech to English.</li>
+  <li><strong>AlgaeBot (Master's Thesis):</strong> A domain-specific GraphRAG chatbot combining a Neo4j knowledge graph with BGE vector search in ChromaDB. Built the full ingestion pipeline (PDF extraction, LLM metadata) and evaluated chunking strategies using HOPE and RAGAS frameworks.</li>
+  <li><strong>Vision Transformer for Plant Disease:</strong> Implemented a Vision Transformer from scratch in PyTorch, trained on 87,000 leaf images across 38 classes, achieving 99.77% validation accuracy.</li>
+  <li><strong>Quantitative Trading System:</strong> Built an end-to-end trading advisor using a Weibull survival model and linear programming to maximize expected return in a virtual economy, ranking in the top 0.1% of active accounts.</li>
 </ul>
+
+<h2>Professional Experience</h2>
+<ul>
+  <li><strong>Data Analyst Trainee | T-Mobile Czech Republic</strong> (Apr 2023 – Aug 2024): Engineered SQL data pipelines against Oracle and MS SQL sources to consolidate revenue data. Designed Power BI dashboards adopted by regional sales teams. Served as a translation layer between business stakeholders and the analytics team.</li>
+  <li><strong>Administrative Assistant | Trade Fairs Brno</strong> (2020 – 2022): Performed Czech-English technical translation, competitor web scraping, and Excel-based reporting.</li>
+</ul>
+
+<h2>Education</h2>
+<ul>
+  <li><strong>MSc Data Science</strong> | University of Southern Denmark, Kolding (Expected June 2026)</li>
+  <li><strong>BSc Applied Computer Science</strong> | Prague University of Economics and Business (2020 – 2024)</li>
+</ul>
+
 <p>{% if motd %}
   <div class="insight-box">
     💡 <em>{{ motd }}</em>
